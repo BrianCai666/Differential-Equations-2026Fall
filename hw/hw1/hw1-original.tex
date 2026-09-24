@@ -1,0 +1,105 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+
+% 定义 Question 环境（用于写答案）
+\newenvironment{Question}{%
+  \par\noindent\textbf{Answer.}\quad\ignorespaces
+}{%
+  \par\medskip
+}
+
+
+
+\begin{document}
+
+
+\begin{center}
+    \textbf{SHENZHEN UNIVERSITY} \\
+    \textbf{INSTITUTE FOR ADVANCED STUDY} \\
+    Differential Equations, Autumn 2026 \\
+    Assignment 1, due at 1:00 PM on Wednesday, September 30, 2026
+\end{center}
+\section*{}
+1.1: In Problem 13-15, write a differential equation that fits the physical description.
+\begin{enumerate}
+  \item[13.] The rate of change of the population $p$ of bacteria at time $t$ is proportional to the population at time $t$.
+  \begin{Question}
+  % 在此处填写答案
+  \end{Question}
+
+  \item[14.] The velocity at time $t$ of a particle moving along a straight line is proportional to the fourth power of its position $x$.
+  \begin{Question}
+  % 在此处填写答案
+  \end{Question}
+\end{enumerate}
+
+\section*{1.2}
+\begin{enumerate}
+  \item[1.(a)] Show that $\phi(x)=x^{2}$ is an explicit solution to
+  $$x\frac{dy}{dx}=2y$$
+  on the interval $(-\infty,\infty)$.
+  \begin{Question}
+  % 在此处填写答案
+  \end{Question}
+
+  \item[(b)] Show that $\phi(x)=e^{x}-x$ is an explicit solution to
+  $$\frac{dy}{dx}+y^{2}=e^{2x}+(1-2x)e^{x}+x^{2}-1$$
+  on the interval $(-\infty,\infty)$.
+  \begin{Question}
+  % 在此处填写答案
+  \end{Question}
+
+  \item[(c)] Show that $\phi(x)=x^{2}-x^{-1}$ is an explicit solution to $x^{2}\frac{d^{2}y}{dx^{2}}=2y$ on the interval $(0,\infty)$.
+  \begin{Question}
+  % 在此处填写答案
+  \end{Question}
+
+  \item[3.] $y=\sin x+x^{2},\ \frac{d^{2}y}{dx^{2}}+y=x^{2}+2$.
+  \begin{Question}
+  % 在此处填写答案
+  \end{Question}
+
+  \item[8.] $y=3\sin 2x+e^{-x},\ y^{\prime\prime}+4y=5e^{-x}$.
+  \begin{Question}
+  % 在此处填写答案
+  \end{Question}
+
+  \item[10.] $y-\ln y=x^{2}+1,\ \frac{dy}{dx}=\frac{2xy}{y-1}$.
+  \begin{Question}
+  % 在此处填写答案
+  \end{Question}
+
+  \item[11.] $e^{xy}+y=x-1,\ \frac{dy}{dx}=\frac{e^{-xy}-y}{e^{-xy}+x}$.
+  \begin{Question}
+  % 在此处填写答案
+  \end{Question}
+
+  \item[20.] Determine for which values of $m$ the function $\phi=e^{mx}$ is a solution to the given equation.
+  $$\begin{array}{l}(a)\ \frac{d^{2}y}{dx^{2}}+6\frac{dy}{dx}+5y=0,\\[6pt](b)\ \frac{d^{3}y}{dx^{3}}+3\frac{d^{2}y}{dx^{2}}+2\frac{dy}{dx}=0.\end{array}$$
+  \begin{Question}
+  % 在此处填写答案
+  \end{Question}
+
+  \item[22.] Verify that the function $\phi(x)=c_{1}e^{x}+c_{2}e^{-2x}$ is a solution to the linear equation
+  $$\frac{d^{2}y}{dx^{2}}+\frac{dy}{dx}-2y=0$$
+  for any choice of the constants $c_{1}$ and $c_{2}$. Determine $c_{1}$ and $c_{2}$ so that each of the following initial conditions are satisfied.
+  \begin{itemize}
+      \item[(a)] $y(0)=2,\ y^{\prime}(0)=1$;
+      \item[(b)] $y(1)=1,\ y^{\prime}(1)=0$.
+  \end{itemize}
+  \begin{Question}
+  % 在此处填写答案
+  \end{Question}
+\end{enumerate}
+
+\section*{6.}
+Use Euler's method with step size $h=0.2$ to approximate the solution to the initial value problem
+$$y^{\prime}=\frac{1}{x}\left(y^{2}+y\right),\quad y(1)=1$$
+at the points $x=1.2, 1.4, 1.6$, and $1.8$.
+\begin{Question}
+% 在此处填写答案
+\end{Question}
+
+\end{document}
