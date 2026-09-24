@@ -6,6 +6,7 @@
 *.toc
 *.fls
 *.fdb_latexmk
+*.pdf
 
 # Python
 __pycache__/
