@@ -1,0 +1,623 @@
+\documentclass[11pt,a4paper]{article}
+
+\setlength{\hoffset}{1in}
+\setlength{\oddsidemargin}{-1in}
+\setlength{\voffset}{0.9in}
+\setlength{\topmargin}{-1.6in}
+\setlength{\textwidth}{15.92cm}
+\setlength{\textheight}{25cm}
+\linespread{1.1}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{makeidx}
+\usepackage[all]{xy}
+
+
+\begin{document}
+
+\begin{center}
+SHENZHEN UNIVERSITY \\
+INSTITUTE FOR ADVANCED STUDY \\
+Differential Equations, Autumn 2026
+Assignment 2, due on Thursday, October 12, 2026, at 6:00 PM,
+
+\end{center}
+
+
+\bigskip
+\noindent
+{\bf Problem 1.}  (Problems 7,10,11 of Exercises 2.2) Solve the following equations:
+
+1) $x\dfrac{dy}{dx}=\dfrac{1}{y^3}$.
+\medskip
+\par\noindent
+\textbf{Solution.}\par
+\[
+y^3\,dy=\frac{1}{x}\,dx
+\]
+\[
+\int y^3\,dy=\int\frac{1}{x}\,dx
+\]
+\[
+\frac{1}{4}y^4=\ln|x|+C
+\]
+\[
+\ln|x|-\frac{1}{4}y^4=C
+\]
+\medskip
+2) $\dfrac{dy}{dx}=\dfrac{x}{y^2\sqrt{1+x}}$.
+\medskip
+\par\noindent
+\textbf{Solution.}\par
+\[
+y^2\,dy=
+\left(\frac{1+x}{\sqrt{1+x}}-\frac{1}{\sqrt{1+x}}\right)dx
+\]
+\[
+\int y^2\,dy=
+\int\left(\frac{1+x}{\sqrt{1+x}}-\frac{1}{\sqrt{1+x}}\right)d(x+1)
+\]
+\[
+\frac{1}{3}y^3=
+\frac{2}{3}(x+1)^{3/2}-2(x+1)^{1/2}+C
+\]
+\[
+y^3-2(x+1)^{3/2}+6(x+1)^{1/2}=C_1
+\]
+\medskip
+3) $x\dfrac{dv}{dx}=\dfrac{1-4v^2}{3v}$.
+\medskip
+\par\noindent
+\textbf{Solution.}\par
+\[
+\frac{3v}{1-4v^2}\,dv=\frac{1}{x}\,dx
+\]
+\[
+\int\frac{3v}{1-4v^2}\,dv=\int\frac{1}{x}\,dx
+\]
+\[
+\int\frac{3}{4}
+\left(\frac{1}{1-2v}-\frac{1}{1+2v}\right)dv
+=\int\frac{1}{x}\,dx
+\]
+\[
+\frac{3}{4}\left[
+-\frac{1}{2}\int\frac{1}{1-2v}\,d(1-2v)
+-\frac{1}{2}\int\frac{1}{1+2v}\,d(1+2v)
+\right]
+=\int\frac{1}{x}\,dx
+\]
+\[
+-\frac{3}{8}\left[\ln|1-2v|+\ln|1+2v|\right]
+=\ln|x|+C
+\]
+\[
+-\frac{3}{8}\ln|1-4v^2|=\ln|x|+C
+\]
+\[
+\ln|1-4v^2|=\ln\left(|x|^{-8/3}\right)+C
+\]
+\[
+|1-4v^2|=C_2|x|^{-8/3}
+\]
+\[
+1-4v^2=C_2x^{-8/3}
+\]
+\medskip
+\bigskip
+\noindent
+{\bf Problem 2.}  (Problems 20 and 21 of Exercises 2.2)
+Solve the following initial value problems:
+
+1) $x^2\dfrac{dy}{dx}=\dfrac{4x^2- x-2}{(x+1)(y+1)}, \quad y(1)=1$.
+\medskip
+\par\noindent
+\textbf{Solution.}\par
+\[
+x^2\frac{dy}{dx}
+=\frac{(x+1)(4x-5)+3}{(x+1)(y+1)}
+\]
+\[
+x^2\frac{dy}{dx}
+=\frac{1}{y+1}\left(4x-5+\frac{3}{x+1}\right)
+\]
+\[
+(y+1)\,dy
+=\left[\frac{4}{x}-\frac{5}{x^2}
++\frac{3}{x^2(x+1)}\right]dx
+\]
+\[
+\int(y+1)\,dy
+=\int\left[\frac{4}{x}-\frac{5}{x^2}
+-\frac{3}{x}+\frac{3}{x^2}+\frac{3}{x+1}\right]dx
+\]
+\[
+\int(y+1)\,dy
+=\int\left(\frac{1}{x}-\frac{2}{x^2}
++\frac{3}{x+1}\right)dx
+\]
+\[
+\frac{1}{2}y^2+y
+=\ln|x|+\frac{2}{x}+3\ln|x+1|+C
+\]
+Substitute $y(1)=1$
+\[
+\frac{1}{2}+1=2+3\ln 2+C
+\]
+\[
+C=-\frac{1}{2}-\ln 8
+\]
+The solution is:
+\[
+\frac{1}{2}y^2+y
+=\ln|x|+\frac{2}{x}+3\ln|x+1|-\frac{1}{2}-\ln 8
+\]
+\medskip
+2) $\dfrac{1}{\theta}\dfrac{dy}{d\theta}=\dfrac{y \sin \theta}{y^2+1},   \quad y(\pi)=1$.
+\medskip
+\par\noindent
+\textbf{Solution.}\par
+\[
+\left(y+\frac{1}{y}\right)dy=\theta\sin\theta\,d\theta
+\]
+\[
+\int\left(y+\frac{1}{y}\right)dy
+=\int\theta\sin\theta\,d\theta
+\]
+Suppose
+\[
+\begin{aligned}
+u  &= \theta,  & \qquad dv &= \sin\theta\,d\theta,\\
+du &= d\theta, & v         &= -\cos\theta.
+\end{aligned}
+\]
+\[
+\begin{aligned}
+\int\theta\sin\theta\,d\theta
+&=uv-\int v\,du\\
+&=-\theta\cos\theta+\int\cos\theta\,d\theta\\
+&=-\theta\cos\theta+\sin\theta+C
+\end{aligned}
+\]
+\[
+\ln|y|+\frac{1}{2}y^2
+=-\theta\cos\theta+\sin\theta+C
+\]
+Substitute $y(\pi)=1$
+\[
+\frac{1}{2}=-\pi\cdot(-1)+C
+\]
+\[
+C=\frac{1}{2}-\pi
+\]
+The solution is:
+\[
+\ln|y|+\frac{1}{2}y^2
+=-\theta\cos\theta+\sin\theta+\frac{1}{2}-\pi
+\]
+\medskip
+  
+
+\bigskip
+\noindent
+{\bf Problem 3.}  (Problems 7 and 12 of Exercises 2.3)
+Find the general solutions to the following equations:
+
+1) $\dfrac{dy}{dx}-y-e^{3x}=0$.
+\medskip
+\par\noindent
+\textbf{Solution.}\par
+\[
+\frac{dy}{dx}-y=e^{3x}
+\]
+\[
+P(x)=-1,\qquad Q(x)=e^{3x}
+\]
+\[
+e^{\int P(x)\,dx}=e^{\int(-1)\,dx}=e^{-x}
+\]
+\[
+e^{-x}\frac{dy}{dx}-e^{-x}y=e^{2x}
+\]
+\[
+\frac{d}{dx}\left(e^{-x}y\right)=e^{2x}
+\]
+\[
+\int\frac{d}{dx}\left(e^{-x}y\right)dx
+=\int e^{2x}\,dx
+\]
+\[
+e^{-x}y=\frac{1}{2}e^{2x}+C
+\]
+\[
+y=e^x\left(\frac{1}{2}e^{2x}+C\right)
+\]
+\[
+y=\frac{1}{2}e^{3x}+Ce^x
+\]
+\medskip
+2)  $\dfrac{dy}{dx}=x^2e^{-4x}-4y$.
+\medskip
+\par\noindent
+\textbf{Solution.}\par
+\[
+\frac{dy}{dx}+4y=x^2e^{-4x}
+\]
+\[
+P(x)=4,\qquad Q(x)=x^2e^{-4x}
+\]
+\[
+e^{\int P(x)\,dx}=e^{4x}
+\]
+\[
+e^{4x}\frac{dy}{dx}+4ye^{4x}=x^2
+\]
+\[
+\frac{d}{dx}\left(e^{4x}y\right)=x^2
+\]
+\[
+\int\frac{d}{dx}\left(e^{4x}y\right)dx
+=\int x^2\,dx
+\]
+\[
+e^{4x}y=\frac{1}{3}x^3+C
+\]
+\[
+y=\frac{1}{e^{4x}}\left(\frac{1}{3}x^3+C\right)
+\]
+\medskip
+
+
+
+\bigskip
+\noindent
+{\bf Problem 4.}
+(Problem 25 of Exercises 2.3)  \\
+\noindent
+  Using definite integration, show that the solution to the initial value problem
+ $$
+ \dfrac{dy}{dx} + 2xy =1,  \quad y(2)=1,
+ $$
+ can be expressed as
+ $$
+ y(x) = e^{-x^2} \left( e^4 + \int_2^x e^{t^2} dt \right) .
+ $$
+\medskip
+\par\noindent
+\textbf{Solution.}\par
+\[
+P(x)=2x,\qquad Q(x)=1
+\]
+\[
+e^{\int P(x)\,dx}=e^{\int 2x\,dx}=e^{x^2}
+\]
+\[
+e^{x^2}\frac{dy}{dx}+e^{x^2}\cdot 2xy=e^{x^2}
+\]
+\[
+\frac{d}{dx}\left(e^{x^2}y\right)=e^{x^2}
+\]
+\[
+\int_2^x\frac{d}{dt}\left(e^{t^2}y(t)\right)dt
+=\int_2^x e^{t^2}\,dt
+\]
+\[
+e^{x^2}y(x)-e^{2^2}y(2)=\int_2^x e^{t^2}\,dt
+\]
+\[
+e^{x^2}y(x)-e^4=\int_2^x e^{t^2}\,dt
+\]
+\[
+y(x)=e^{-x^2}\left[e^4+\int_2^x e^{t^2}\,dt\right]
+\]
+\medskip
+
+
+
+
+\bigskip
+\noindent
+{\bf Problem 5.}  (Problems 10,18, 20 of Exercises 2.4)
+Determine whether the following equations are exact. If they are, then solve them.
+
+1) $(2x+y)dx+(x-2y)dy=0$.
+\medskip
+\par\noindent
+\textbf{Solution.}\par
+\[
+M(x,y)=2x+y,\qquad N(x,y)=x-2y
+\]
+\[
+\frac{\partial M}{\partial y}=1,\qquad
+\frac{\partial N}{\partial x}=1
+\]
+$\dfrac{\partial M}{\partial y}=\dfrac{\partial N}{\partial x}$,
+while $M,N$ have continuous first partial derivatives.
+
+Thus, it is an exact equation.
+\[
+\begin{aligned}
+F&=\int M\,dx+g(y)\\
+ &=\int(2x+y)\,dx+g(y)\\
+ &=x^2+xy+g(y)
+\end{aligned}
+\]
+\[
+N=\frac{d}{dy}(x^2+xy)+g'(y)
+\]
+\[
+\begin{aligned}
+g(y)&=\int\left[N-\frac{d}{dy}(x^2+xy)\right]dy\\
+    &=\int[x-2y-x]\,dy\\
+    &=-y^2
+\end{aligned}
+\]
+\[
+F(x,y)=x^2+xy-y^2=C
+\]
+\medskip
+2) $(2x+y^2-\cos (x+y))dx+(2xy-\cos (x+y)-e^y)dy=0$.
+\medskip
+\par\noindent
+\textbf{Solution.}\par
+\[
+M(x,y)=2x+y^2-\cos(x+y)
+\]
+\[
+N(x,y)=2xy-\cos(x+y)-e^y
+\]
+\[
+\frac{\partial M}{\partial y}=2y+\sin(x+y),\qquad
+\frac{\partial N}{\partial x}=2y+\sin(x+y)
+\]
+$\dfrac{\partial M}{\partial y}=\dfrac{\partial N}{\partial x}$,
+while $M,N$ have continuous first derivatives.
+
+Thus, it is an exact equation.
+\[
+\begin{aligned}
+F&=\int M\,dx+g(y)\\
+ &=\int[2x+y^2-\cos(x+y)]\,dx+g(y)\\
+ &=x^2+xy^2-\sin(x+y)+g(y)
+\end{aligned}
+\]
+\[
+\begin{aligned}
+N&=\frac{d}{dy}[x^2+xy^2-\sin(x+y)]+g'(y)\\
+ &=2xy-\cos(x+y)+g'(y)
+\end{aligned}
+\]
+\[
+\begin{aligned}
+g(y)&=\int[N-2xy+\cos(x+y)]\,dy\\
+    &=\int[2xy-\cos(x+y)-e^y-2xy+\cos(x+y)]\,dy\\
+    &=\int -e^y\,dy\\
+    &=-e^y
+\end{aligned}
+\]
+\[
+F(x,y)=x^2+xy^2-\sin(x+y)-e^y=C
+\]
+\medskip
+3)$\left(\dfrac{2}{\sqrt{1-x^2}}+y\cos (xy)\right)dx+\left(x\cos (xy)-y^{-1/3}\right)dy=0$.
+\medskip
+\par\noindent
+\textbf{Solution.}\par
+\[
+M(x,y)=\frac{2}{\sqrt{1-x^2}}+y\cos(xy),\qquad
+N(x,y)=x\cos(xy)-y^{-1/3}
+\]
+\[
+\frac{\partial M}{\partial y}=\cos(xy)-xy\sin(xy)
+\]
+\[
+\frac{\partial N}{\partial x}=\cos(xy)-xy\sin(xy)
+\]
+$\dfrac{\partial M}{\partial y}=\dfrac{\partial N}{\partial x}$,
+while $M,N$ have continuous first derivatives.
+
+Thus, it is an exact equation.
+\[
+\begin{aligned}
+F&=\int M\,dx+g(y)\\
+ &=\int\left[\frac{2}{\sqrt{1-x^2}}+y\cos(xy)\right]dx+g(y)\\
+ &=\sin(xy)+2\arcsin x+g(y)
+\end{aligned}
+\]
+\[
+\begin{aligned}
+N&=\frac{d}{dy}[\sin(xy)+2\arcsin x]+g'(y)\\
+ &=x\cos(xy)+g'(y)
+\end{aligned}
+\]
+\[
+\begin{aligned}
+g(y)&=\int[N-x\cos(xy)]\,dy\\
+    &=\int[x\cos(xy)-y^{-1/3}-x\cos(xy)]\,dy\\
+    &=-\frac{3}{2}y^{2/3}
+\end{aligned}
+\]
+\[
+F(x,y)=\sin(xy)+2\arcsin x-\frac{3}{2}y^{2/3}=C
+\]
+\medskip
+
+
+\bigskip
+\noindent
+{\bf Problem 6.}  (Problem 26 of Exercises 2.4)
+Solve the following initial problem.
+
+
+$(\tan y-2)dx+(x\sec ^2y+1/y)dy=0, \quad \quad y(0)=1$
+\medskip
+\par\noindent
+\textbf{Solution.}\par
+\[
+M(x,y)=\tan y-2,\qquad
+N(x,y)=x\sec^2 y+\frac{1}{y}
+\]
+\[
+\frac{\partial M}{\partial y}=\sec^2 y,\qquad
+\frac{\partial N}{\partial x}=\sec^2 y
+\]
+$\dfrac{\partial M}{\partial y}=\dfrac{\partial N}{\partial x}$,
+while $M,N$ have continuous first derivatives.
+
+Thus, it is an exact equation.
+\[
+\begin{aligned}
+F&=\int M\,dx+g(y)\\
+ &=\int(\tan y-2)\,dx+g(y)\\
+ &=x\tan y-2x+g(y)
+\end{aligned}
+\]
+\[
+\begin{aligned}
+N&=\frac{d}{dy}(x\tan y-2x)+g'(y)\\
+ &=x\sec^2 y+g'(y)
+\end{aligned}
+\]
+\[
+\begin{aligned}
+g(y)&=\int(N-x\sec^2 y)\,dy\\
+    &=\int\left(x\sec^2 y+\frac{1}{y}-x\sec^2 y\right)dy\\
+    &=\ln|y|
+\end{aligned}
+\]
+\[
+F(x,y)=x\tan y-2x+\ln|y|=C
+\]
+Substitute $y(0)=1$
+\[
+C=0
+\]
+\[
+F(x,y)=x\tan y-2x+\ln|y|=0
+\]
+\medskip
+
+\bigskip
+\noindent
+{\bf Problem 7.}
+(Problem 30 of Exercises 2.4) Consider the equation
+$$
+(5x^2y+6x^3y^2+4xy^2)dx+(2x^3+3x^4y+3x^2y)dy=0
+$$
+(a) Show that the equation is not exact.  \\
+\noindent
+(b) Multiply the equation by $x^ny^m$ and determine values for $n$ and $m$ that make the resulting equation exact. \\
+\noindent
+(c) Use the solution of the resulting exact equation to solve the original equation.
+
+\medskip
+\par\noindent
+\textbf{Solution.}\par
+\noindent
+(a)
+\[
+M(x,y)=5x^2y+6x^3y^2+4xy^2,\qquad
+N(x,y)=2x^3+3x^4y+3x^2y
+\]
+\[
+\frac{\partial M}{\partial y}=5x^2+12x^3y+8xy,\qquad
+\frac{\partial N}{\partial x}=6x^2+12x^3y+6xy
+\]
+$\dfrac{\partial M}{\partial y}\ne\dfrac{\partial N}{\partial x}$,
+it is not an exact equation.
+
+\medskip
+\noindent
+(b)
+\[
+\begin{aligned}
+M_1(x,y)&=x^ny^mM(x,y)\\
+        &=5x^{2+n}y^{1+m}+6x^{3+n}y^{2+m}
+          +4x^{1+n}y^{2+m}
+\end{aligned}
+\]
+\[
+\begin{aligned}
+N_1(x,y)&=x^ny^mN(x,y)\\
+        &=2x^{3+n}y^m+3x^{4+n}y^{1+m}
+          +3x^{2+n}y^{1+m}
+\end{aligned}
+\]
+\[
+\begin{aligned}
+\frac{\partial M_1}{\partial y}
+&=5(1+m)x^{2+n}y^m+6(2+m)x^{3+n}y^{1+m}\\
+&\quad+4(2+m)x^{1+n}y^{1+m}
+\end{aligned}
+\]
+\[
+\begin{aligned}
+\frac{\partial N_1}{\partial x}
+&=2(3+n)x^{2+n}y^m+3(4+n)x^{3+n}y^{1+m}\\
+&\quad+3(2+n)x^{1+n}y^{1+m}
+\end{aligned}
+\]
+\[
+\begin{cases}
+5(1+m)=2(3+n),\\
+6(2+m)=3(4+n),\\
+4(2+m)=3(2+n)
+\end{cases}
+\quad\Longrightarrow\quad
+\begin{cases}
+m=1,\\
+n=2
+\end{cases}
+\]
+
+\medskip
+\noindent
+(c)
+\[
+M_1(x,y)=5x^4y^2+6x^5y^3+4x^3y^3
+\]
+\[
+N_1(x,y)=2x^5y+3x^6y^2+3x^4y^2
+\]
+\[
+\begin{aligned}
+F&=\int M_1\,dx+g(y)\\
+ &=\int(5x^4y^2+6x^5y^3+4x^3y^3)\,dx+g(y)\\
+ &=x^5y^2+x^6y^3+x^4y^3+g(y)
+\end{aligned}
+\]
+\[
+\begin{aligned}
+N_1&=\frac{d}{dy}(x^5y^2+x^6y^3+x^4y^3)+g'(y)\\
+   &=2x^5y+3x^6y^2+3x^4y^2+g'(y)
+\end{aligned}
+\]
+\[
+\begin{aligned}
+g(y)&=\int[N_1-(2x^5y+3x^6y^2+3x^4y^2)]\,dy\\
+    &=0
+\end{aligned}
+\]
+\[
+F(x,y)=x^5y^2+x^6y^3+x^4y^3=C
+\]
+\medskip
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
