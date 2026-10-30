@@ -1,0 +1,747 @@
+\documentclass[11pt,a4paper]{article}
+
+\setlength{\hoffset}{1in}
+\setlength{\oddsidemargin}{-1in}
+\setlength{\voffset}{0.9in}
+\setlength{\topmargin}{-1.6in}
+\setlength{\textwidth}{15.92cm}
+\setlength{\textheight}{25cm}
+\linespread{1.1}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{makeidx}
+
+
+\begin{document}
+
+\begin{center}
+SHENZHEN UNIVERSITY \\
+INSTITUTE FOR ADVANCED STUDY \\
+ Differential Equations, Autumn 2026 \\
+Assignment 3, due  on Thursday, November 9, 2026
+\end{center}
+
+
+\noindent
+{\bf Problem 1.} (Problem 7 of Exercises 2.6)
+Solve the ODE $\cos (x+y)dy=\sin (x+y)dx$.
+\par\medskip
+\noindent\textbf{Solution.}\par
+\medskip
+
+Let \(u=x+y\).
+\[
+du=dx+dy
+\]
+\[
+\frac{du}{dx}=1+\frac{dy}{dx}
+\]
+
+\[
+\cos(x+y)\,dy=\sin(x+y)\,dx
+\]
+\[
+\frac{\cos u}{\sin u}\cdot
+\left(\frac{du}{dx}-1\right)=1
+\]
+\[
+\frac{du}{dx}=\frac{\sin u}{\cos u}+1
+\]
+\[
+\frac{du}{dx}=\frac{\sin u+\cos u}{\cos u}
+\]
+\[
+dx=\frac{\cos u}{\sin u+\cos u}\,du
+\]
+
+Suppose \(\cos u=A(\sin u+\cos u)+B(\cos u-\sin u)\).
+\[
+\cos u=(A-B)\sin u+(A+B)\cos u
+\]
+\[
+\begin{cases}
+A-B=0,\\
+A+B=1
+\end{cases}
+\quad\Longrightarrow\quad
+\begin{cases}
+A=\dfrac12,\\[4pt]
+B=\dfrac12
+\end{cases}
+\]
+\[
+dx=\frac12\left(
+\frac{\sin u+\cos u}{\sin u+\cos u}
++\frac{\cos u-\sin u}{\sin u+\cos u}
+\right)\,du
+\]
+\[
+\int dx=\frac12\int\left(
+1+\frac{\cos u-\sin u}{\sin u+\cos u}
+\right)\,du
+\]
+\[
+x=\frac12\left(u+\ln|\sin u+\cos u|\right)+C
+\]
+
+Substitute \(u=x+y\).
+\[
+x=\frac12\left(
+x+y+\ln|\sin(x+y)+\cos(x+y)|
+\right)+C
+\]
+\[
+x-y-\ln|\sin(x+y)+\cos(x+y)|=C_2,
+\qquad C_2\in\mathbb R
+\]
+\[
+\sin u+\cos u=0
+\quad\Longrightarrow\quad
+y=-x-\frac{\pi}{4}+k\pi,
+\qquad k\in\mathbb Z
+\]
+
+\bigskip
+\bigskip
+\noindent
+{\bf Problem 2.} (Problem 47 of Exercises 2.6) {{\bf Riccati Equation}}. An equation of the form
+\[
+\dfrac{dy}{dx}=P(x)y^2+Q(x)y+R(x)
+\]
+is called a  {\bf Riccati equation }.
+
+a) If one solution $u(x)$ of the above equation is known, show that the substitution $y=u+1/v$ reduces the above equation to a linear equation in $v$ .
+\par\medskip
+\noindent\textbf{Solution.}\par
+\medskip
+Substitute \(y=u+\dfrac1v\).
+\[
+\frac{du}{dx}-\frac1{v^2}\frac{dv}{dx}
+=P(x)\left(u+\frac1v\right)^2
++Q(x)\left(u+\frac1v\right)+R(x)
+\]
+\[
+\frac{du}{dx}-\frac1{v^2}\frac{dv}{dx}
+=P(x)\left(u^2+\frac{2u}{v}+\frac1{v^2}\right)
++Q(x)\left(u+\frac1v\right)+R(x)
+\]
+\[
+\begin{aligned}
+\frac{du}{dx}-\frac1{v^2}\frac{dv}{dx}
+&=\left(P(x)u^2+Q(x)u+R(x)\right)\\
+&\quad+\frac1v\left(2P(x)u+Q(x)\right)
++\frac{P(x)}{v^2}
+\end{aligned}
+\]
+\[
+-\frac1{v^2}\frac{dv}{dx}
+=\frac1v\left(2P(x)u+Q(x)\right)
++\frac{P(x)}{v^2}
+\]
+\[
+\frac{dv}{dx}
+=-v\left(2P(x)u+Q(x)\right)-P(x)
+\]
+\[
+\frac{dv}{dx}+\left(2P(x)u+Q(x)\right)v=-P(x)
+\]
+
+\medskip
+b) Given that $u(x)=x$ is a solution to $\dfrac {dy}{dx}=x^3(y-x)^2+\dfrac {y}{x} \quad$,
+use the result of part (a) to find all the other solutions to this equation.
+\medskip
+\par\medskip
+\noindent\textbf{Solution.}\par
+\medskip
+\[
+\frac{dy}{dx}=x^3(y-x)^2+\frac yx
+\]
+\[
+\frac{dy}{dx}=x^3(y^2-2xy+x^2)+\frac yx
+\]
+\[
+\frac{dy}{dx}=x^3y^2-2x^4y+x^5+\frac yx
+\]
+\[
+\frac{dy}{dx}
+=x^3y^2+\left(\frac1x-2x^4\right)y+x^5
+\]
+\[
+P(x)=x^3,\qquad
+Q(x)=\frac1x-2x^4,\qquad
+R(x)=x^5
+\]
+
+Let \(y=u+\dfrac1v=x+\dfrac1v\).
+\[
+\frac{dv}{dx}
++\left(2x^3\cdot x+\frac1x-2x^4\right)v=-x^3
+\]
+\[
+\frac{dv}{dx}+\frac vx=-x^3
+\]
+\[
+x\frac{dv}{dx}+v=-x^4
+\]
+\[
+\frac{d}{dx}(xv)=-x^4
+\]
+\[
+\int\frac{d}{dx}(xv)\,dx=-\int x^4\,dx
+\]
+\[
+xv=-\frac{x^5}{5}+C
+\]
+\[
+v=-\frac{x^4}{5}+\frac Cx
+\]
+
+Substitute \(v\) into \(y=u+\dfrac1v\).
+\[
+y=x+\frac{5x}{C_1-x^5},
+\qquad \text{while }y=x\text{ is also a solution}
+\]
+
+\bigskip
+\noindent
+{\bf Problem 3.} (Problem 33 of Exercises 2.4)
+Find the {\bf orthogonal trajectories} to the families (refer to Problem 32 on page 62 and 63 for the definition of  {\bf orthogonal trajectories})
+
+a)  $2x^2 + y^2 = k$; \;\;\;\; b) $y = k x^4$.
+\par\medskip
+\noindent\textbf{Solution.}\par
+\medskip
+
+\medskip
+\noindent a)
+\[
+2x^2+y^2=k
+\]
+\[
+4x\,dx+2y\,dy=0
+\]
+\[
+\frac{dy}{dx}=-\frac{2x}{y}
+\]
+
+The orthogonal trajectories should satisfy this ODE:
+\[
+\frac{dy}{dx}=\frac{y}{2x}
+\]
+\[
+\frac{dy}{y}=\frac{dx}{2x}
+\]
+\[
+\ln|y|=\frac12\ln|2x|+C
+\]
+\[
+y^2=C_1x
+\]
+
+\medskip
+\noindent b)
+\[
+y=kx^4
+\]
+\[
+\frac{dy}{dx}=4kx^3=\frac{4y}{x}
+\]
+
+The orthogonal trajectories should satisfy this ODE:
+\[
+\frac{dy}{dx}=-\frac{x}{4y}
+\]
+\[
+4y\,dy=-x\,dx
+\]
+\[
+\int4y\,dy=-\int x\,dx
+\]
+\[
+2y^2=-\frac12x^2+C
+\]
+\[
+x^2+4y^2=C_1
+\]
+
+\bigskip
+\bigskip
+\noindent
+{\bf Problem 4.} (Problem 5 of Exercises 3.2) A swimming pool whose volume is 10,000 gal contains water
+that is $0.01\%$ chlorine. Starting at $t=0$, city water containing
+$0.001\%$ chlorine is pumped into the pool at a rate of 5 gal/min. The pool water flows out at the same rate.
+What is the percentage of chlorine in the pool after 1 h? When will the pool water be $0.002\%$ chlorine?
+\par\medskip
+\noindent\textbf{Solution.}\par
+\medskip
+
+Suppose \(y(t)\) is the concentration of chlorine at the time \(t\)
+in the swimming pool.
+\[
+10^4\frac{dy}{dt}=5\times10^{-5}-5y
+\]
+\[
+\frac{dy}{5\times10^{-9}-5\times10^{-4}y}=dt
+\]
+\[
+\frac1{5\times10^{-4}}
+\int\frac{dy}{10^{-5}-y}
+=\int dt
+\]
+\[
+-2000\ln|10^{-5}-y|=t+C
+\]
+\[
+\ln|10^{-5}-y|=-\frac1{2000}t+C_1
+\]
+\[
+y=10^{-5}+C_2e^{-t/2000}
+\]
+
+Substitute \(y(0)=10^{-4}\).
+\[
+10^{-4}=10^{-5}+C_2
+\]
+\[
+C_2=0.00009
+\]
+\[
+y(t)=10^{-5}+0.00009e^{-t/2000}
+\]
+
+\[
+y(60)\approx0.0000973401
+\]
+\[
+y(60)\times100\%\approx0.009734\%
+\]
+
+\[
+y(t)=0.00002
+\]
+\[
+t\approx4394.45\ \mathrm{min}\approx73.24\ \mathrm{h}
+\]
+
+\bigskip
+
+
+\bigskip
+\noindent
+{\bf Problem 5.} (Problem 1, Exercises 3.3) A cup of hot coffee initially at $95^{\circ}$C cools to $80^{\circ}$C in 5 minutes while
+sitting in a room of temperature $21^{\circ}$C. Using just Newton's law of cooling, determine when the temperature of the coffee will be
+a nice $50^{\circ}$C.
+\par\medskip
+\noindent\textbf{Solution.}\par
+\medskip
+
+\[
+T(t)=T_{\mathrm{out}}+(T_0-T_{\mathrm{out}})e^{-kt}
+\]
+\[
+T(t)=21+(95-21)e^{-kt}
+\]
+\[
+T(t)=21+74e^{-kt}
+\]
+
+Substitute \(T(5)=80\).
+\[
+80=21+74e^{-5k}
+\]
+\[
+74e^{-5k}=59
+\]
+\[
+e^{-5k}=\frac{59}{74}
+\]
+\[
+-5k=\ln\frac{59}{74}
+\]
+\[
+k=-\frac15\ln\frac{59}{74}
+\]
+\[
+T(t)=21+74e^{\frac15\ln\frac{59}{74}\,t}
+\]
+
+\[
+T(t)=50
+\]
+\[
+t\approx20.68\ \mathrm{min}
+\]
+
+\bigskip
+
+\bigskip
+\noindent
+{\bf Problem 6.} (Problem 7, Exercises 3.3) In a hot Saturday morning while people are working inside, the air conditioner
+keeps the temperature inside the building at $24^{\circ}$C. At noon the air conditioner is turned off, and the people
+go home. The temperature outside is a constant $35^{\circ}$C for the rest of the afternoon. If the time constant for the building is 4hr, what will
+be the temperature inside the building at 2:00pm? At 6:00pm? When will the
+temperature inside the building reach $27^{\circ}$C?
+\par\medskip
+\noindent\textbf{Solution.}\par
+\medskip
+
+\[
+T(t)=T_{\mathrm{out}}
++(T_0-T_{\mathrm{out}})e^{-t/\tau}
+\]
+\[
+T(t)=35-11e^{-t/4}
+\]
+\[
+T(2)=35-11e^{-1/2}\approx28.3^\circ\mathrm C
+\]
+\[
+T(6)=35-11e^{-3/2}\approx32.5^\circ\mathrm C
+\]
+\[
+T(t)=27
+\]
+\[
+t\approx1.2738\ \mathrm h,
+\qquad \text{time: 1:16 p.m.}
+\]
+
+\bigskip
+
+\bigskip
+\noindent
+{\bf Problem 7.} (Problem 5 of Exercises 3.4) An object  of mass 5 kg is given an initial downward velocity of 50m/sec and then allowed to fall
+under the influence of gravity. Assume that the force in newtons due to air resistance is $-10v$, where $v$ is
+the velocity of the object in m/sec. Determine the equation of motion of the object. If the object is initially
+500 m above the ground, determine when the object will strike the ground.
+\par\medskip
+\noindent\textbf{Solution.}\par
+\medskip
+
+\[
+m\frac{dv}{dt}=mg-10v
+\]
+\[
+5\frac{dv}{dt}=5\times9.8-10v
+\]
+\[
+\frac{dv}{49-10v}=\frac15\,dt
+\]
+\[
+\int\frac{dv}{49-10v}=\frac15\int dt
+\]
+\[
+-\frac1{10}\ln|49-10v|=\frac15t+C
+\]
+\[
+\ln|49-10v|=-2t+C_1
+\]
+\[
+49-10v=C_2e^{-2t}
+\]
+
+Substitute \(v(0)=50\).
+\[
+49-500=C_2
+\]
+\[
+C_2=-451
+\]
+
+\[
+49-10v=-451e^{-2t}
+\]
+\[
+v=\frac{49}{10}+\frac{451}{10}e^{-2t}
+\]
+\[
+x=500-\int v\,dt
+=500-\left(
+\frac{49}{10}t-\frac{451}{20}e^{-2t}+C_3
+\right)
+\]
+
+Substitute \(x(0)=500\).
+\[
+500=500-\left(-\frac{451}{20}+C_3\right)
+\]
+\[
+C_3=\frac{451}{20}
+\]
+\[
+x(t)=500-\frac{49}{10}t
++\frac{451}{20}e^{-2t}-\frac{451}{20}
+\]
+\[
+x(t)=\frac{9549}{20}-\frac{49}{10}t
++\frac{451}{20}e^{-2t}
+\]
+
+\[
+x(t)=0
+\]
+\[
+t\approx97.44\ \mathrm s
+\]
+
+\bigskip
+\bigskip
+\noindent
+{\bf Problem 8.}
+Find the solutions to the following ODEs.
+
+a) $y''+6y'+9y = 0$; \;\;\;\;\; b) $6y''+y'-2y = 0$.
+\par\medskip
+\noindent\textbf{Solution.}\par
+\medskip
+
+\medskip
+\noindent a)
+\[
+y''+6y'+9y=0
+\]
+
+Suppose \(y=e^{\alpha t}\).
+\[
+y''+6y'+9y=(\alpha^2+6\alpha+9)Ae^{\alpha t}=0
+\]
+\[
+\alpha^2+6\alpha+9=0
+\]
+\[
+(\alpha+3)^2=0
+\]
+\[
+\alpha=-3
+\]
+\[
+y_1=e^{-3t},\qquad y_2=te^{-3t}
+\]
+\[
+y=C_1y_1+C_2y_2=(C_1+C_2t)e^{-3t},
+\qquad C_1,C_2\in\mathbb R
+\]
+
+\medskip
+\noindent b)
+\[
+6y''+y'-2y=0
+\]
+
+Suppose \(y=e^{\alpha t}\).
+\[
+6\alpha^2+\alpha-2=0
+\]
+\[
+(3\alpha+2)(2\alpha-1)=0
+\]
+\[
+\alpha_1=-\frac23,\qquad \alpha_2=\frac12
+\]
+\[
+y=C_1e^{-\frac23t}+C_2e^{t/2},
+\qquad C_1,C_2\in\mathbb R
+\]
+
+\bigskip
+\noindent
+{\bf Problem 9.}
+Solve the following initial value problems.
+
+a) $y''+2y'-8y = 0 ; y(0)=3, \;\;\;y'(0)= -12$;
+
+b) $y''-4y'-5y = 0 ; y(-1)= 3,\;\;\; y'(-1) = 9$.
+
+\par\medskip
+\noindent\textbf{Solution.}\par
+\medskip
+
+\medskip
+\noindent a)
+\[
+y''+2y'-8y=0
+\]
+
+Suppose \(y=e^{\alpha t}\).
+\[
+\alpha^2+2\alpha-8=0
+\]
+\[
+(\alpha+4)(\alpha-2)=0
+\]
+\[
+\alpha_1=-4,\qquad \alpha_2=2
+\]
+\[
+y=C_1e^{-4t}+C_2e^{2t},
+\qquad
+y'=-4C_1e^{-4t}+2C_2e^{2t}
+\]
+
+Substitute \(y(0)=3\) and \(y'(0)=-12\).
+\[
+\begin{pmatrix}
+1 & 1\\
+-4 & 2
+\end{pmatrix}
+\begin{pmatrix}
+C_1\\
+C_2
+\end{pmatrix}
+=
+\begin{pmatrix}
+3\\
+-12
+\end{pmatrix}
+\]
+\[
+\begin{pmatrix}
+C_1\\
+C_2
+\end{pmatrix}
+=
+\begin{pmatrix}
+3\\
+0
+\end{pmatrix}
+\]
+\[
+y=3e^{-4t}
+\]
+
+\medskip
+\noindent b)
+\[
+y''-4y'-5y=0
+\]
+
+Suppose \(y=e^{\alpha t}\).
+\[
+\alpha^2-4\alpha-5=0
+\]
+\[
+(\alpha-5)(\alpha+1)=0
+\]
+\[
+\alpha_1=5,\qquad \alpha_2=-1
+\]
+\[
+y=C_1e^{5t}+C_2e^{-t},
+\qquad
+y'=5C_1e^{5t}-C_2e^{-t}
+\]
+
+Substitute \(y(-1)=3\), \(y'(-1)=9\).
+\[
+\begin{pmatrix}
+e^{-5} & e\\
+5e^{-5} & -e
+\end{pmatrix}
+\begin{pmatrix}
+C_1\\
+C_2
+\end{pmatrix}
+=
+\begin{pmatrix}
+3\\
+9
+\end{pmatrix}
+\]
+\[
+\begin{pmatrix}
+C_1\\
+C_2
+\end{pmatrix}
+=
+\begin{pmatrix}
+2e^5\\
+e^{-1}
+\end{pmatrix}
+\]
+\[
+y=2e^{5+5t}+e^{-t-1}
+\]
+
+\bigskip
+
+\noindent {\bf Problem 10.} (Problems 10 and 20 of Exercises 4.4) Find a particular solution to the given
+differential equation
+
+1) $y'' + 2y' - y = 10$;
+\medskip
+\par\medskip
+\noindent\textbf{Solution.}\par
+\medskip
+\[
+y''+2y'-y=10
+\]
+
+Notice that \(y=-10\) is a particular solution.
+
+\medskip
+2) $y'' + 4y = 16t \sin 2t$.
+\par\medskip
+\noindent\textbf{Solution.}\par
+\medskip
+\[
+y''+4y=16t\sin2t
+\]
+
+Suppose \(y=(At^2+Bt)\sin2t+(Ct^2+Dt)\cos2t\).
+\[
+\begin{aligned}
+y'
+&=(2At+B)\sin2t+2\cos2t(At^2+Bt)
+ +(2Ct+D)\cos2t\\
+&\quad-2\sin2t(Ct^2+Dt)\\
+&=\left[-2Ct^2+2(A-D)t+B\right]\sin2t\\
+&\quad+\left[2At^2+2(B+C)t+D\right]\cos2t
+\end{aligned}
+\]
+\[
+\begin{aligned}
+y''
+&=\left[-4At^2-(4B+8C)t+2A-4D\right]\sin2t\\
+&\quad+\left[-4Ct^2+(8A-4D)t+4B+2C\right]\cos2t
+\end{aligned}
+\]
+\[
+y''+4y
+=(-8Ct+2A-4D)\sin2t+(8At+4B+2C)\cos2t
+\]
+\[
+\begin{cases}
+-8C=16,\\
+2A-4D=0,\\
+8A=0,\\
+4B+2C=0
+\end{cases}
+\quad\Longrightarrow\quad
+\begin{cases}
+A=0,\\
+B=1,\\
+C=-2,\\
+D=0
+\end{cases}
+\]
+\[
+y=t\sin2t-2t^2\cos2t
+\]
+
+\bigskip
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
